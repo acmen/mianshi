@@ -3,4 +3,4 @@
 
 ### 目录
 1. [集合类](./java/集合类.md)
-2. [DUBBO](./dubbo/dubbo.md)
+2. [DUBBO](./dubbo/README.md)
