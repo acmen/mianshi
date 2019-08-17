@@ -101,7 +101,7 @@ dubbo作为一个分布式框架，能够避免单点故障和支持服务的横
 对于非幂等性的接口建议使用Failfast，这种如果异常直接抛出异常。
 
 #### 网关的实现
-详细见 soul 网关实践 [soul网关](https://cloud.tencent.com/developer/article/1424331)
+详细见 soul 网关实践 [soul网关](https://cloud.tencent.com/developer/article/1424331)  
 有赞网关实践 [有赞网关][https://tech.youzan.com/api-gateway-in-practice/]
 
 #### 如何防止服务的循环依赖
