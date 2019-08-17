@@ -130,11 +130,9 @@ dubbo 采用Sentinel进行限流熔断等。
 #### 服务降级
 参考Sentinel文档 [Sentinel](https://github.com/alibaba/Sentinel/wiki/%E4%B8%BB%E9%A1%B5) 需要详细阅读一下
 
-#### 分布式事务如何实现
-
-#### 服务网关的概念
+#### 如果兼容多版本
+通过不同的version来进行多版本的兼容。
 
 #### 中台的概念
 
-#### 如果兼容多版本
-通过不同的version来进行多版本的兼容。
+#### 分布式事务如何实现
