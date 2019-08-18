@@ -117,7 +117,9 @@ zk节点超过半数节点正常才能提供服务，如果宕机节点过多，
 逐个进行重启，因为本身有半数的机器提供服务，所以 并不影响集群提供服务。
 
 #### zk paxos 算法
-[paxos算法](https://blog.csdn.net/liuyuehu/article/details/52136945)
+参考 [paxos算法](https://blog.csdn.net/liuyuehu/article/details/52136945)  
+
+[paxos 总结](./paxos.md)
 
 #### zab协议详解
 [分布式理论](https://www.cnblogs.com/stateis0/category/1206895.html)
