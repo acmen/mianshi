@@ -138,3 +138,11 @@ dubbo 采用Sentinel进行限流熔断等。
 
 #### 分布式事务如何实现
 详见 [分布式事务](./分布式事务.md)
+
+#### 如何解决服务调用链过长的问题？
+
+#### 说说核心的配置有哪些？
+核心配置有 dubbo:service/ dubbo:reference/ dubbo:protocol/ dubbo:registry/ dubbo:application/ dubbo:provider/ dubbo:consumer/ dubbo:method/
+
+#### 同一个服务多个注册的情况下可以直连某一个服务吗？
+可以直连，修改配置即可，也可以通过telnet直接某个服务。
