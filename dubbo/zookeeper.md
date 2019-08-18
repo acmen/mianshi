@@ -116,10 +116,29 @@ zk节点超过半数节点正常才能提供服务，如果宕机节点过多，
 #### zk 是否支持动态添加机器
 逐个进行重启，因为本身有半数的机器提供服务，所以 并不影响集群提供服务。
 
+#### zk的数据结构
+zk命名空间中的znode 兼具 目录和文件两种特性，维护着数据、元数据、ACL、时间戳等数据结构。主要包含三部分  
+1. stat状态信息，描述znode版本，权限等。
+2. data 与该Znode关联的数据(配置文件信息、状态信息、汇集位置)，数据大小至多1M
+3. children 该znode下的子节点
+
+#### zk watch机制
+zk可以对所有的读操作设置watch包含 exists() getChildren() getData() 当节点发生变化的时候会触发相应的操作。zk会向客户端发送且仅发送一条通知。
+
+#### zk的读写
+zookeeper的各个复制集节点（follower，leader，observer）都包含了集群所有的数据且存在内存中，像个内存数据库。更新操作会以日志的形式记录到磁盘以保证可恢复性，并且写入操作会在写入内存数据库之前序列化到磁盘。  
+每个ZooKeeper服务器都为客户端服务。客户端只连接到一台服务器以提交请求。读取请求由每个服务器数据库的本地副本提供服务。更改服务状态，写请求的请求由zab协议处理。   
+作为协议协议的一部分，来自客户端的所有写入请求都被转发到称为leader的单个服务器。其余的ZooKeeper服务器（称为followers）接收来自领导者leader的消息提议并同意消息传递。消息传递层负责替换失败的leader并将followers与leader同步。  
+ZooKeeper使用自定义原子消息传递协议zab。由于消息传递层是原子的，当领导者收到写入请求时，它会计算应用写入时系统的状态，并将其转换为捕获此新状态的事务。
+
+
 #### zk paxos 算法
 参考 [paxos算法](https://blog.csdn.net/liuyuehu/article/details/52136945)  
 
-[paxos 总结](./paxos.md)
+[paxos 总结](./paxos.md)  
+[zk简述](https://www.cnblogs.com/uncleData/p/9704934.html)
 
 #### zab协议详解
-[分布式理论](https://www.cnblogs.com/stateis0/category/1206895.html)
+参考[分布式理论](https://www.cnblogs.com/stateis0/category/1206895.html)
+
+[分布式理论](./分布式理论.md)
