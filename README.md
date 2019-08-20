@@ -6,3 +6,4 @@
 2. [DUBBO](./dubbo/README.md)
 3. [zookeeper](./dubbo/zookeeper.md)
 4. [Spring](./spring/README.md)
+5. [Redis](./redis/README.md)
